@@ -22,7 +22,7 @@ class Solution {
                     index = j;
                 }
             }
-            // 최대값을 찾아 해당 값의 인덱스번째를 result에서 order 값으로 변환
+           // emergency의 원소는 1 <= x <= 100이므로, 0이라는 논외로 변경하여 다음 순회에 영향 미치지 않게함.
             result[index] = i;
 
             emergency[index] = 0;
