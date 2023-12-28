@@ -1,6 +1,8 @@
 class Solution {
     public String solution(String letter) {
         String answer = "";
+        // 아스키코드를 모르면 멍청하게 푸는 문제..
+        // switch에 너무 매몰되어 생각하지 않기.
         
         String[] morseArr = {".-","-...","-.-.","-..",".","..-.",
                 "--.","....","..",".---","-.-",".-..",
