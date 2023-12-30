@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public int[] solution(int[] numbers, String direction) {
         int[] answer = new int[numbers.length];
@@ -10,23 +8,13 @@ class Solution {
                 answer[i - 1] = numbers[i % numbers.length];
         }
         
-        // right는 어떻게 해야할지 모르겠음..
-        List<Integer> list = new ArrayList<>();
+        // right는 위같이 단순 수식으로는 어떻게 구현 해야할지 모르겠음..
         if(direction.equals("right")) {
             int i = numbers.length-1;
-            while(list.size() != numbers.length) {
-                list.add(numbers[i % numbers.length]);
-                i++;
-            }
-            
-            i = 0;
-            for(int index : list) {
-                answer[i++] = index; 
-            }
+            for(int index = 0; index < numbers.length; index++)
+                answer[index] = numbers[i++ % numbers.length];
             
         }
-        
-        
         return answer;
     }
 }
