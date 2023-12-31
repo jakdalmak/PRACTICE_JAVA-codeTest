@@ -6,7 +6,8 @@ class Solution {
         
         
         for(String bab : babbling) {
-            bab = bab.replaceAll("aya|ye|woo|ma", "");
+            bab = bab.replaceAll("aya|ye|woo|ma", "1");
+            bab = bab.replaceAll("1", "");
             if(bab.equals("")) answer++;
         }
         
