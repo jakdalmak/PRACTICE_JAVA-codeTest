@@ -12,6 +12,11 @@ class Solution {
         // 시작지점을 2가 아닌 4부터 수행하는 것으로 작성하였음.
         // 합성수의 시작 지점은 4이므로, 의미없는 for문 반복 횟수 최대한 줄이기 위함.
         for(int i = 4; i <= n; i++) {
+            if(i % 2 == 0) { 
+                ++answer; 
+                continue;
+            }
+            
             for(int j = 2; j < i; j++) {
                 if(i % j == 0) {
                     ++answer;
