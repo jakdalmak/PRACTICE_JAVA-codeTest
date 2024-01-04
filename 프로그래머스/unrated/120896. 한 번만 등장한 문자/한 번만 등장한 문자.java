@@ -10,7 +10,7 @@ class Solution {
         // String에 별도 처리하여 distinct 결과값 얻어 Map에 설정하기
         // => Set 사용?
         
-        /*
+        /* => 제대로 못푼 방식.
         Map<Character, Integer> map = new HashMap<>();
         
         String distinctedStr = "";
@@ -39,7 +39,7 @@ class Solution {
         */
         
         
-        
+        /* => 풀었지만, 성능이 낮음(이중 for문)
         String answer = "";
         
         ArrayList<Character> list = new ArrayList<>();
@@ -59,5 +59,19 @@ class Solution {
         for(char c : list) answer += c;
         
         return answer;
+        */
+        
+        
+        /* 더 좋은 답안 */
+        String answer = "";
+        char[] charCount = new char[26];
+
+        for(char c : s.toCharArray()) charCount[c - 'a']++;
+        
+        for(int i = 0; i < 26; i++) if(charCount[i] == 1) answer += (char) (i + 'a');
+        // 배열 저장 방식이 아스키코드에 기준하므로, 영문자 순서 sort가 이미 성립됨.
+        
+        return answer;
+        
     }
 }
