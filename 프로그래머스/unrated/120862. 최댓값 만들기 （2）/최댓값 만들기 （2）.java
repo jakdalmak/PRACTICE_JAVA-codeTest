@@ -44,11 +44,14 @@ class Solution {
         return answer; // 만약 답이 0인경우, 0을 return
         */
         
-        
+        /* 두 번째 답안 슈도 코드 */
         // 답이 무조건 음수인 경우 == length 2에 +, -
         // 답이 무조건 0인 경우 == + 0 / - 0 / + - 0
         // 배열 내에는 중복이 가능하다.
+        // 다 필요없고 그냥.. 돌리기.
         
+        /* 두 번째 답안 */
+        /*
         int answer = Integer.MIN_VALUE;
         
         for(int i = 0; i < numbers.length - 1; i++) {
@@ -59,7 +62,18 @@ class Solution {
         } 
         
         return answer;
+        */
         
+        
+        /* 세 번째 답안 => 다른 사람 풀이 */
+        // Arrays.sort()와 Math.max를 이용하기.
+        // 현재 배열에는 음수, 0, 양수가 모두 존재한다.
+        // 배열 자체를 오름차순 sort하여 최저값 두개와 최대값 두개를 곱한 값을 Math.max()로 비교하여 return하기
+        // 답이 0인 경우도 처리 가능한 가장 간단한 방법!!
+        
+        Arrays.sort(numbers);
+        
+        return Math.max(numbers[0] * numbers[1], numbers[numbers.length-2] * numbers[numbers.length-1]);
         
         
     }
