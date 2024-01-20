@@ -7,12 +7,12 @@ class Solution {
         // 경우의 수의 개수가 아닌, 말그대로 고를 수 있는 종류의 최대 개수를 리턴하면 됨!
         
         
-        Map<Integer, Integer> ponketmonMap = new HashMap<>();
+        Set<Integer> ponketmonSet = new HashSet<>();
         
-        for(int i : nums) ponketmonMap.put(i, ponketmonMap.getOrDefault(i, 0) + 1);
+        for(int i : nums) ponketmonSet.add(i);
         
         
-        if(ponketmonMap.size() <= nums.length/2) return ponketmonMap.size();
+        if(ponketmonSet.size() <= nums.length/2) return ponketmonSet.size();
         else return nums.length/2;
             
     }
